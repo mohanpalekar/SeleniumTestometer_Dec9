@@ -36,7 +36,9 @@ public class Selenium3 {
 		//WebElement signIn = driver.findElement(By.xpath("//a[@aria-label='Sign in']"));
 
 		WebElement search = driver.findElement(By.id(":rh:"));
-
+		
+		//driver.findElement(By.className(""));
+		
 		search.sendKeys("Manali");
 
 		// wait for 2 seconds
