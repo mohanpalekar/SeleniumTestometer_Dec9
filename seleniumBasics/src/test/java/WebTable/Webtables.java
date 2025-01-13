@@ -65,17 +65,33 @@ public class Webtables {
 		
 		System.out.println(table.size());
 		
+		String issuerName = "WeRide Inc.";
+		
 		////table[@data-testid='largest-10']//tbody/tr[1]/td[6]
 		
 		for(int i=1; i!=table.size(); i++) {
 			
-			WebElement row = driver.findElement(By.xpath("//table[@data-testid='largest-10']//tbody/tr["+i+"]/td[3]"));
+			WebElement issuer = driver.findElement(By.xpath("//table[@data-testid='largest-10']//tbody/tr["+i+"]/td[3]"));
 			
-			jse.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", row);
+			if(issuer.getText().equals(issuerName)) {
+				
+				jse.executeScript("arguments[0].scrollIntoViewIfNeeded(true);", issuer);
+				
+				jse.executeScript("arguments[0].setAttribute('style', 'border: 4px solid green;');", issuer);
+				
+				System.out.println(issuer.getText());
+				
+				WebElement industry = driver.findElement(By.xpath("//table[@data-testid='largest-10']//tbody/tr["+i+"]/td[4]"));
+				
+				WebElement proceeds = driver.findElement(By.xpath("//table[@data-testid='largest-10']//tbody/tr["+i+"]/td[9]"));
+				
+				System.out.println(industry.getText());
+				
+				System.out.println(proceeds.getText());break;
+				
+			}
 			
-			jse.executeScript("arguments[0].setAttribute('style', 'border: 4px solid green;');", row);
 			
-			System.out.println(row.getText());
 			
 		}
 		

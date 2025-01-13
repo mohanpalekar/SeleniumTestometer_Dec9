@@ -1,0 +1,3 @@
+[INFO ] 2025-01-13 08:11:14.881 [main] LogsInSelenium - Creating webdriver session
+[WARN ] 2025-01-13 08:11:23.636 [main] LogsInSelenium - launched driver
+[DEBUG] 2025-01-13 08:11:23.797 [main] LogsInSelenium - Session in progress
